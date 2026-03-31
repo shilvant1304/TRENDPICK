@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrendPick — Best Fashion & Accessories Deals in India</title>
+    <meta name="description" content="Discover the best deals on fashion, shoes, watches, and mobile accessories. Expert reviews and comparisons to help you pick the perfect product at the best price.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo" id="logo">
+                <span class="logo-icon">🔥</span>
+                <span class="logo-text">Trend<span class="logo-highlight">Pick</span></span>
+            </a>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#categories" class="nav-link">Categories</a></li>
+                <li><a href="#trending" class="nav-link">Trending</a></li>
+                <li><a href="#deals" class="nav-link">Today's Deals</a></li>
+                <li><a href="#blog" class="nav-link">Blog</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="search-btn" id="search-btn" aria-label="Search">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                </button>
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+                </button>
+                <button class="hamburger" id="hamburger" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Search Modal -->
+    <div class="search-modal" id="search-modal">
+        <div class="search-modal-content">
+            <input type="text" class="search-input" id="search-input" placeholder="Search products, reviews, deals...">
+            <button class="search-close" id="search-close">&times;</button>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-bg">
+            <img src="hero_banner.png" alt="Fashion and accessories" class="hero-bg-img">
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-badge">🔥 #1 Product Recommendation Platform</div>
+            <h1 class="hero-title">
+                Find the <span class="gradient-text">Best Deals</span> on<br>
+                Fashion & Accessories
+            </h1>
+            <p class="hero-subtitle">Expert reviews, honest comparisons, and the best prices — all in one place. Save money on every purchase with our curated recommendations.</p>
+            <div class="hero-buttons">
+                <a href="#trending" class="btn btn-primary" id="explore-btn">
+                    Explore Trending
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                </a>
+                <a href="#categories" class="btn btn-outline" id="categories-btn">Browse Categories</a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-number" data-count="500">0</span><span class="stat-plus">+</span>
+                    <span class="stat-label">Products Reviewed</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat">
+                    <span class="stat-number" data-count="50">0</span><span class="stat-plus">K+</span>
+                    <span class="stat-label">Happy Readers</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat">
+                    <span class="stat-number" data-count="100">0</span><span class="stat-plus">%</span>
+                    <span class="stat-label">Honest Reviews</span>
+                </div>
+            </div>
+        </div>
+        <div class="hero-scroll">
+            <div class="scroll-indicator">
+                <span>Scroll Down</span>
+                <div class="scroll-arrow"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="categories" id="categories">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">📂 Categories</span>
+                <h2 class="section-title">Shop By Category</h2>
+                <p class="section-subtitle">Find the best products in your favorite categories</p>
+            </div>
+            <div class="category-grid">
+                <a href="#" class="category-card" id="cat-mens">
+                    <div class="category-img-wrapper">
+                        <img src="mens_fashion.png" alt="Men's Fashion" class="category-img">
+                        <div class="category-overlay"></div>
+                    </div>
+                    <div class="category-info">
+                        <h3>Men's Fashion</h3>
+                        <p>Shirts, Jeans, Shoes, Watches & More</p>
+                        <span class="category-count">120+ Products</span>
+                    </div>
+                </a>
+                <a href="#" class="category-card" id="cat-womens">
+                    <div class="category-img-wrapper">
+                        <img src="womens_fashion.png" alt="Women's Fashion" class="category-img">
+                        <div class="category-overlay"></div>
+                    </div>
+                    <div class="category-info">
+                        <h3>Women's Fashion</h3>
+                        <p>Dresses, Kurtis, Heels, Bags & More</p>
+                        <span class="category-count">200+ Products</span>
+                    </div>
+                </a>
+                <a href="#" class="category-card" id="cat-mobile">
+                    <div class="category-img-wrapper">
+                        <img src="mobile_accessories.png" alt="Mobile Accessories" class="category-img">
+                        <div class="category-overlay"></div>
+                    </div>
+                    <div class="category-info">
+                        <h3>Mobile Accessories</h3>
+                        <p>Earbuds, Cases, Chargers, Power Banks</p>
+                        <span class="category-count">180+ Products</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trending Products Section -->
+    <section class="trending" id="trending">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">🔥 Trending Now</span>
+                <h2 class="section-title">Top Picks This Week</h2>
+                <p class="section-subtitle">Handpicked products that are trending right now</p>
+            </div>
+            <div class="filter-tabs">
+                <button class="filter-tab active" data-filter="all">All</button>
+                <button class="filter-tab" data-filter="mens">Men's</button>
+                <button class="filter-tab" data-filter="womens">Women's</button>
+                <button class="filter-tab" data-filter="accessories">Accessories</button>
+            </div>
+            <div class="products-grid" id="products-grid">
+                <!-- Product Card 1 -->
+                <div class="product-card" data-category="mens" id="product-1">
+                    <div class="product-badge">🔥 Best Seller</div>
+                    <div class="product-img-wrapper">
+                        <img src="product_sneakers.png" alt="Running Sneakers" class="product-img">
+                        <div class="product-actions">
+                            <button class="wishlist-btn" aria-label="Add to wishlist">♡</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Men's Footwear</span>
+                        <h3 class="product-name">Premium Running Sneakers</h3>
+                        <div class="product-rating">
+                            <div class="stars">★★★★★</div>
+                            <span class="rating-count">(2,847)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="price-current">₹1,499</span>
+                            <span class="price-original">₹3,999</span>
+                            <span class="price-discount">63% OFF</span>
+                        </div>
+                        <a href="https://www.amazon.in/s?k=running+sneakers+men&tag=trendpick-21" target="_blank" rel="noopener noreferrer" class="btn-buy">
+                            Buy on Amazon
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product Card 2 -->
+                <div class="product-card" data-category="mens" id="product-2">
+                    <div class="product-badge sale">💎 Premium</div>
+                    <div class="product-img-wrapper">
+                        <img src="product_watch.png" alt="Analog Watch" class="product-img">
+                        <div class="product-actions">
+                            <button class="wishlist-btn" aria-label="Add to wishlist">♡</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Men's Watches</span>
+                        <h3 class="product-name">Classic Leather Strap Watch</h3>
+                        <div class="product-rating">
+                            <div class="stars">★★★★☆</div>
+                            <span class="rating-count">(1,523)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="price-current">₹899</span>
+                            <span class="price-original">₹2,499</span>
+                            <span class="price-discount">64% OFF</span>
+                        </div>
+                        <a href="https://www.amazon.in/s?k=leather+strap+watch+men&tag=trendpick-21" target="_blank" rel="noopener noreferrer" class="btn-buy">
+                            Buy on Amazon
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product Card 3 -->
+                <div class="product-card" data-category="womens" id="product-3">
+                    <div class="product-badge new">✨ New</div>
+                    <div class="product-img-wrapper">
+                        <img src="womens_fashion.png" alt="Ethnic Kurti Set" class="product-img">
+                        <div class="product-actions">
+                            <button class="wishlist-btn" aria-label="Add to wishlist">♡</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Women's Ethnic</span>
+                        <h3 class="product-name">Designer Embroidered Kurti Set</h3>
+                        <div class="product-rating">
+                            <div class="stars">★★★★★</div>
+                            <span class="rating-count">(3,291)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="price-current">₹649</span>
+                            <span class="price-original">₹1,999</span>
+                            <span class="price-discount">68% OFF</span>
+                        </div>
+                        <a href="https://www.amazon.in/s?k=designer+kurti+set+women&tag=trendpick-21" target="_blank" rel="noopener noreferrer" class="btn-buy">
+                            Buy on Amazon
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product Card 4 -->
+                <div class="product-card" data-category="accessories" id="product-4">
+                    <div class="product-badge">🔥 Best Seller</div>
+                    <div class="product-img-wrapper">
+                        <img src="mobile_accessories.png" alt="Wireless Earbuds" class="product-img">
+                        <div class="product-actions">
+                            <button class="wishlist-btn" aria-label="Add to wishlist">♡</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Mobile Accessories</span>
+                        <h3 class="product-name">TWS Wireless Earbuds with ANC</h3>
+                        <div class="product-rating">
+                            <div class="stars">★★★★☆</div>
+                            <span class="rating-count">(5,672)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="price-current">₹1,299</span>
+                            <span class="price-original">₹3,999</span>
+                            <span class="price-discount">68% OFF</span>
+                        </div>
+                        <a href="https://www.amazon.in/s?k=wireless+earbuds+anc&tag=trendpick-21" target="_blank" rel="noopener noreferrer" class="btn-buy">
+                            Buy on Amazon
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product Card 5 -->
+                <div class="product-card" data-category="womens" id="product-5">
+                    <div class="product-badge sale">🏷️ Deal</div>
+                    <div class="product-img-wrapper">
+                        <img src="womens_fashion.png" alt="Western Dress" class="product-img">
+                        <div class="product-actions">
+                            <button class="wishlist-btn" aria-label="Add to wishlist">♡</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Women's Western</span>
+                        <h3 class="product-name">Floral Print Maxi Dress</h3>
+                        <div class="product-rating">
+                            <div class="stars">★★★★★</div>
+                            <span class="rating-count">(1,845)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="price-current">₹799</span>
+                            <span class="price-original">₹2,499</span>
+                            <span class="price-discount">68% OFF</span>
+                        </div>
+                        <a href="https://www.amazon.in/s?k=floral+maxi+dress+women&tag=trendpick-21" target="_blank" rel="noopener noreferrer" class="btn-buy">
+                            Buy on Amazon
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product Card 6 -->
+                <div class="product-card" data-category="accessories" id="product-6">
+                    <div class="product-badge new">✨ New</div>
+                    <div class="product-img-wrapper">
+                        <img src="mobile_accessories.png" alt="Power Bank" class="product-img">
+                        <div class="product-actions">
+                            <button class="wishlist-btn" aria-label="Add to wishlist">♡</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Mobile Accessories</span>
+                        <h3 class="product-name">20000mAh Fast Charging Power Bank</h3>
+                        <div class="product-rating">
+                            <div class="stars">★★★★☆</div>
+                            <span class="rating-count">(4,102)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="price-current">₹999</span>
+                            <span class="price-original">₹2,499</span>
+                            <span class="price-discount">60% OFF</span>
+                        </div>
+                        <a href="https://www.amazon.in/s?k=20000mah+power+bank&tag=trendpick-21" target="_blank" rel="noopener noreferrer" class="btn-buy">
+                            Buy on Amazon
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Today's Deals Banner -->
+    <section class="deals-banner" id="deals">
+        <div class="container">
+            <div class="deals-content">
+                <div class="deals-text">
+                    <span class="deals-tag">⚡ Limited Time Offer</span>
+                    <h2>Today's Top Deals</h2>
+                    <p>Grab up to <span class="highlight">80% OFF</span> on fashion, electronics, and accessories. Don't miss out!</p>
+                    <div class="countdown" id="countdown">
+                        <div class="countdown-item">
+                            <span class="countdown-number" id="hours">08</span>
+                            <span class="countdown-label">Hours</span>
+                        </div>
+                        <div class="countdown-separator">:</div>
+                        <div class="countdown-item">
+                            <span class="countdown-number" id="minutes">45</span>
+                            <span class="countdown-label">Minutes</span>
+                        </div>
+                        <div class="countdown-separator">:</div>
+                        <div class="countdown-item">
+                            <span class="countdown-number" id="seconds">30</span>
+                            <span class="countdown-label">Seconds</span>
+                        </div>
+                    </div>
+                    <a href="https://www.amazon.in/deals?tag=trendpick-21" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">
+                        Shop All Deals
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                    </a>
+                </div>
+                <div class="deals-visual">
+                    <div class="floating-card card-1">
+                        <span class="card-emoji">👟</span>
+                        <span class="card-discount">70% OFF</span>
+                    </div>
+                    <div class="floating-card card-2">
+                        <span class="card-emoji">👗</span>
+                        <span class="card-discount">60% OFF</span>
+                    </div>
+                    <div class="floating-card card-3">
+                        <span class="card-emoji">🎧</span>
+                        <span class="card-discount">50% OFF</span>
+                    </div>
+                    <div class="floating-card card-4">
+                        <span class="card-emoji">⌚</span>
+                        <span class="card-discount">45% OFF</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section class="blog" id="blog">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">📝 Latest Reviews</span>
+                <h2 class="section-title">Expert Reviews & Guides</h2>
+                <p class="section-subtitle">In-depth product reviews to help you make the right choice</p>
+            </div>
+            <div class="blog-grid">
+                <article class="blog-card" id="blog-1">
+                    <div class="blog-img-wrapper">
+                        <img src="product_sneakers.png" alt="Best Sneakers Under 2000" class="blog-img">
+                        <span class="blog-badge">Men's</span>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-date">📅 March 28, 2026</span>
+                            <span class="blog-read">⏱️ 5 min read</span>
+                        </div>
+                        <h3 class="blog-title">Top 10 Best Running Sneakers Under ₹2,000 in 2026</h3>
+                        <p class="blog-excerpt">Looking for affordable running shoes? We tested 20+ sneakers and picked the best ones for comfort, durability, and style...</p>
+                        <a href="#" class="blog-link">
+                            Read Full Review
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="blog-card" id="blog-2">
+                    <div class="blog-img-wrapper">
+                        <img src="product_watch.png" alt="Best Watches Under 1000" class="blog-img">
+                        <span class="blog-badge">Accessories</span>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-date">📅 March 25, 2026</span>
+                            <span class="blog-read">⏱️ 7 min read</span>
+                        </div>
+                        <h3 class="blog-title">Best Watches Under ₹1,000 — Style Meets Budget</h3>
+                        <p class="blog-excerpt">You don't need to spend thousands to look good. These watches offer premium looks at pocket-friendly prices...</p>
+                        <a href="#" class="blog-link">
+                            Read Full Review
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="blog-card" id="blog-3">
+                    <div class="blog-img-wrapper">
+                        <img src="mobile_accessories.png" alt="Best Earbuds Under 1500" class="blog-img">
+                        <span class="blog-badge">Tech</span>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-date">📅 March 22, 2026</span>
+                            <span class="blog-read">⏱️ 6 min read</span>
+                        </div>
+                        <h3 class="blog-title">7 Best TWS Earbuds Under ₹1,500 with ANC in 2026</h3>
+                        <p class="blog-excerpt">Active Noise Cancellation under ₹1,500? Yes, it's possible! We tested the latest earbuds to find the best ones...</p>
+                        <a href="#" class="blog-link">
+                            Read Full Review
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                        </a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter" id="newsletter">
+        <div class="container">
+            <div class="newsletter-content">
+                <div class="newsletter-icon">💌</div>
+                <h2>Get the Best Deals in Your Inbox</h2>
+                <p>Subscribe to our newsletter and never miss a trending deal or product review.</p>
+                <form class="newsletter-form" id="newsletter-form">
+                    <input type="email" placeholder="Your email address" class="newsletter-input" id="newsletter-email" required>
+                    <button type="submit" class="btn btn-primary" id="subscribe-btn">Subscribe Free</button>
+                </form>
+                <span class="newsletter-note">🔒 No spam. Unsubscribe anytime.</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#" class="footer-logo">
+                        <span class="logo-icon">🔥</span>
+                        <span class="logo-text">Trend<span class="logo-highlight">Pick</span></span>
+                    </a>
+                    <p class="footer-desc">Your trusted source for honest product reviews and the best deals on fashion and accessories in India.</p>
+                    <div class="footer-social">
+                        <a href="#" class="social-link" aria-label="Instagram">📷</a>
+                        <a href="#" class="social-link" aria-label="YouTube">▶️</a>
+                        <a href="#" class="social-link" aria-label="Twitter">🐦</a>
+                        <a href="#" class="social-link" aria-label="Pinterest">📌</a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Categories</h4>
+                    <ul>
+                        <li><a href="#">Men's Fashion</a></li>
+                        <li><a href="#">Women's Fashion</a></li>
+                        <li><a href="#">Mobile Accessories</a></li>
+                        <li><a href="#">Watches</a></li>
+                        <li><a href="#">Shoes & Sneakers</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Affiliate Disclosure</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Popular Reviews</h4>
+                    <ul>
+                        <li><a href="#">Best Sneakers Under ₹2,000</a></li>
+                        <li><a href="#">Best Watches Under ₹1,000</a></li>
+                        <li><a href="#">Best Earbuds Under ₹1,500</a></li>
+                        <li><a href="#">Best Kurtis Under ₹500</a></li>
+                        <li><a href="#">Best Phone Covers</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-affiliate">
+                    <strong>Affiliate Disclosure:</strong> TrendPick is a participant in the Amazon Associates Program. We earn a small commission on qualifying purchases at no extra cost to you.
+                </p>
+                <p class="footer-copy">&copy; 2026 TrendPick. All rights reserved. Made with ❤️ in India</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="back-to-top" aria-label="Back to top">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>
