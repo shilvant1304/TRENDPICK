@@ -1497,6 +1497,10 @@ ul {
         display: flex;
     }
 
+    .hero-scroll {
+        display: none;
+    }
+
     .nav-links {
         position: fixed;
         top: 0;
