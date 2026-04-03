@@ -96,7 +96,48 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape') searchModal.classList.remove('active');
+        if (e.key === 'Enter' && searchModal.classList.contains('active')) {
+            performSearch();
+        }
     });
+
+    function performSearch() {
+        const query = searchInput.value.toLowerCase().trim();
+        if (!query) return;
+
+        const productCards = document.querySelectorAll('.product-card');
+        let foundCount = 0;
+
+        productCards.forEach(card => {
+            const productName = card.querySelector('.product-name').textContent.toLowerCase();
+            const productCat = card.querySelector('.product-category').textContent.toLowerCase();
+            
+            if (productName.includes(query) || productCat.includes(query)) {
+                card.style.display = 'block';
+                foundCount++;
+            } else {
+                card.style.display = 'none';
+            }
+        });
+
+        // Close modal
+        searchModal.classList.remove('active');
+
+        // Scroll to trending section
+        document.getElementById('trending').scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+        // Update section title if results found
+        const sectionTitle = document.querySelector('#trending .section-title');
+        const sectionSubtitle = document.querySelector('#trending .section-subtitle');
+        
+        if (foundCount > 0) {
+            sectionTitle.textContent = `Search Results for "${searchInput.value}"`;
+            sectionSubtitle.textContent = `Found ${foundCount} products matching your search.`;
+        } else {
+            sectionTitle.textContent = "No Results Found";
+            sectionSubtitle.textContent = `Couldn't find anything for "${searchInput.value}". Please try a different term.`;
+        }
+    }
 
     // ----------------------------------------
     // Counter Animation
