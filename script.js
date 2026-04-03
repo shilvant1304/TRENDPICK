@@ -7,7 +7,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // Navbar Scroll Effect
     // ----------------------------------------
     const navbar = document.getElementById('navbar');
-    const backToTop = document.getElementById('back-to-top');
 
     window.addEventListener('scroll', () => {
         const scrollY = window.scrollY;
@@ -18,19 +17,11 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             navbar.classList.remove('scrolled');
         }
-
-        // Back to top button
-        if (scrollY > 500) {
-            backToTop.classList.add('visible');
-        } else {
-            backToTop.classList.remove('visible');
-        }
     });
 
-    // Back to top click
-    backToTop.addEventListener('click', () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
+    // ----------------------------------------
+    // Mobile Menu
+    // ----------------------------------------
 
     // ----------------------------------------
     // Mobile Menu
@@ -53,41 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // ----------------------------------------
-    // Theme Toggle
-    // ----------------------------------------
-    const themeToggle = document.getElementById('theme-toggle');
-    
-    // Check saved theme
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'light') {
-        document.documentElement.setAttribute('data-theme', 'light');
-    }
-    
-    // Set theme toggle icon (sun/moon)
-    function updateThemeIcon() {
-        const isLight = document.documentElement.getAttribute('data-theme') === 'light';
-        if (isLight) {
-            themeToggle.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>';
-        } else {
-            themeToggle.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>';
-        }
-    }
-    
-    if (themeToggle) {
-        updateThemeIcon(); // Initial icon
-        
-        themeToggle.addEventListener('click', () => {
-            if (document.documentElement.getAttribute('data-theme') === 'light') {
-                document.documentElement.removeAttribute('data-theme');
-                localStorage.setItem('theme', 'dark');
-            } else {
-                document.documentElement.setAttribute('data-theme', 'light');
-                localStorage.setItem('theme', 'light');
-            }
-            updateThemeIcon();
-        });
-    }
+
 
     // ----------------------------------------
     // Active Nav Link on Scroll
@@ -182,6 +139,70 @@ document.addEventListener('DOMContentLoaded', () => {
 
         observer.observe(heroStats);
     }
+
+    // ----------------------------------------
+    // Hierarchical Category Navigation
+    // ----------------------------------------
+    const mainCategories = document.getElementById('main-categories');
+    const subCategoryWrapper = document.getElementById('sub-categories');
+    const backBtn = document.getElementById('back-to-categories');
+    const categoryCards = document.querySelectorAll('.category-card[data-parent]');
+    const subCategoryCards = document.querySelectorAll('.sub-category-card');
+    const allFilterTabs = document.querySelectorAll('.filter-tab');
+    const subCategoryGrids = document.querySelectorAll('.sub-category-grid');
+
+    // Parent category click
+    categoryCards.forEach(card => {
+        card.addEventListener('click', () => {
+            const parentId = card.getAttribute('data-parent');
+            const targetSubGrid = document.getElementById(`sub-${parentId}`);
+
+            if (!targetSubGrid) return;
+
+            // Hide main grid
+            mainCategories.classList.add('hidden');
+            
+            // Show sub wrapper and specific sub grid
+            subCategoryWrapper.classList.add('active');
+            subCategoryGrids.forEach(grid => grid.classList.remove('active'));
+            targetSubGrid.classList.add('active');
+            
+            // Show back button
+            backBtn.classList.add('active');
+
+            // Scroll to top of categories section
+            document.getElementById('categories').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+    });
+
+    // Back to main categories
+    if (backBtn) {
+        backBtn.addEventListener('click', () => {
+            mainCategories.classList.remove('hidden');
+            subCategoryWrapper.classList.remove('active');
+            backBtn.classList.remove('active');
+            subCategoryGrids.forEach(grid => grid.classList.remove('active'));
+        });
+    }
+
+    // Sub-category clicks (Filter sync)
+    subCategoryCards.forEach(subCard => {
+        subCard.addEventListener('click', (e) => {
+            const filter = subCard.getAttribute('data-filter');
+            
+            // Look for matching filter tab in trending section
+            const targetTab = Array.from(allFilterTabs).find(tab => tab.getAttribute('data-filter') === filter);
+            
+            if (targetTab) {
+                // Smooth scroll to Trending section first
+                document.getElementById('trending').scrollIntoView({ behavior: 'smooth', block: 'start' });
+                
+                // Then click the tab (small delay for scroll)
+                setTimeout(() => targetTab.click(), 500);
+            }
+        });
+    });
+
 
     // ----------------------------------------
     // Product Filter Tabs
